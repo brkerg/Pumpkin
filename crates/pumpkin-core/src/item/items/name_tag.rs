@@ -21,7 +21,7 @@ impl ItemBehaviour for NameTagItem {
         let raw_entity = entity.get_entity();
         if let Some(living) = entity.get_living_entity()
             && raw_entity.entity_type.saveable
-            && living.entity.is_alive()
+            && living.is_alive()
             && let Some(name) = item.get_data_component::<CustomNameImpl>()
         {
             raw_entity.set_custom_name(name.name.clone());
